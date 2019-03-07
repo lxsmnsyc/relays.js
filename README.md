@@ -40,6 +40,10 @@ The sequence of inputs depends on the arrival time. Relays don't know which inpu
 Once all input Relays have been executed, and passed the resulting information to their output Relays, the output Relay will then start processing the received inputs.
 In our example, once both AndGateInputs have received an input, their respective callbacks are then executed to process the inputs, in which they will pass their result to the AndGate. The AndGate will then receive the two inputs, process it and pass it to an anonymous Relay, ```x => console.log("The result is " + x)```.
 
+If an input relay passes an information to an output Replay that has already received an input to it and is yet to receive other inputs, the information is then queued for the next process.
+
+As a summary, think of Relays as an individual representation of a Promise.all except that it is reusable and can wait for itself to resolve (Relays can connect to itself). For AI enthusiasts, think of Relays like a Perceptron model except that there is no backpropagation and no calibration.
+
 ## License
 
 MIT License
