@@ -1,0 +1,48 @@
+{
+    "opts": {
+        "template": "node_modules/docdash",
+        "destination": "./docs/" 
+    },
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "source": {
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "plugins": ["plugins/markdown"],
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false,
+        "default": {
+            "outputSourceFiles": true
+        }
+    },
+
+    "docdash": {
+        "meta": {                       
+            "title": "Px - Promise Extensions for JS",                
+            "description": "Px is a library for extending Promises.",         
+            "keyword": "javascript, js, promise, defer, aplus, promises"               
+        },
+        "openGraph": {                  
+            "title": "Px - Promise Extensions for JS",                
+            "type": "website",         
+            "image": "https://avatars3.githubusercontent.com/u/2680116?s=280&v=4",                
+            "site_name": "Px - Promise Extensions for JS",  
+            "url": "https://lxsmnsyc.github.io/px/"                   
+        },
+        "sectionOrder": [
+            "Tutorials",    
+            "Classes"
+        ],
+        "menu":{                        
+            "Github Repo":{         
+                "href":"https://github.com/lxsmnsyc/relays.js", 
+                "target":"_blank",
+                "class":"menu-item",
+                "id":"website_link"
+            }
+        }
+    }
+}

@@ -32,10 +32,21 @@
  */
 const isPromise = obj =>!!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
 /**
- * 
- * @param  {...any} args 
+ * @ignore
  */
 const identity = (...args) => args;
+
+/**
+ * A callback processor which receives the input from input Relays, 
+ * process the inputs, and passes the output to output Relays.
+ * 
+ * If the processor is an async function or a function returns a Promise-like
+ * object, the result is passed on fulfillment of the object.
+ * 
+ * @callback ProcessorCallback
+ * @param {...*} inputs
+ * @returns {*}
+ */
 /**
  * @class
  * @classdesc
@@ -57,13 +68,12 @@ const identity = (...args) => args;
  * AndGateInputA.receive(true);
  * AndGateInputB.receive(true);
  */
-/**
- * A callback processor which receives the input from input Relays, process the inputs, and passes the output to output Relays.
- * @callback ProcessorCallback
- * @param {...*} inputs
- * @returns {*}
- */
 class Relay{
+    /**
+     * Creates a Relay object with the given processor.
+     * @param {ProcessorCallback} processor 
+     * @returns {Relay}
+     */
     constructor(processor){
         if(typeof processor === 'function'){
             this._processor = processor;
@@ -73,14 +83,17 @@ class Relay{
 
         /**
          * The array of input Relays
+         * @ignore
          */
         this._input = [];
         /**
          * The array of output Relays
+         * @ignore
          */
         this._output = [];
         /**
          * The array of received inputs
+         * @ignore
          */
         this._received = [];
     }
@@ -92,35 +105,40 @@ class Relay{
      */
     connectTo(outputRelay){
         /**
-        * Relay check
-        */
-       if(outputRelay instanceof Relay){
-           /**
-            * Check if outputRelay is not yet in output array
-            * or check if the given relay is not an input relay
-            * for outputRelay.
-            */
-           const input = outputRelay._input;
-           const output = this._output;
+         * Relay check
+         * @ignore
+         */
+        if(outputRelay instanceof Relay){
+            /**
+             * Check if outputRelay is not yet in output array
+             * or check if the given relay is not an input relay
+             * for outputRelay.
+             * @ignore
+             */
+            const input = outputRelay._input;
+            const output = this._output;
 
-           if(!output.includes(outputRelay)){
-               /**
-                * add inputRelay to output array
-                */
-               output.push(outputRelay);
-           }
+            if(!output.includes(outputRelay)){
+                /**
+                 * add inputRelay to output array
+                 * @ignore
+                 */
+                output.push(outputRelay);
+            }
 
-           if(!input.includes(this)){
-               /**
-                * add given relay to input array
-                */
-               input.push(this);
-           }
-       }
-       /**
-        * Return the reference for chaining
-        */
-       return this;
+            if(!input.includes(this)){
+                /**
+                 * add given relay to input array
+                 * @ignore
+                 */
+                input.push(this);
+            }
+        }
+        /**
+         * Return the reference for chaining
+         * @ignore
+         */
+        return this;
     }
     /**
      * Connects the given relay to another relay that will serve as
@@ -141,19 +159,23 @@ class Relay{
         const processor = this._processor;
         /**
          * Get the amount of arguments
+         * @ignore
          */
         const argSize = args.length;
         /**
          * Get the input and output
+         * @ignore
          */
         const input = this._input;
         const output = this._output;
         /**
          *  Process the result to the output Relays 
+         * @ignore
          */
         const processOutput = x => {
             /**
              * Pass the result value to the output Relays
+             * @ignore
              */
             for(const output of this._output){
                 output.receive(x);
@@ -161,10 +183,12 @@ class Relay{
         };
         /**
          * Process the arguments
+         * @ignore
          */
         const processArgs = preparedArgs => {
             /**
              * call the processor
+             * @ignore
              */
             let result;
             try{
@@ -174,10 +198,12 @@ class Relay{
             }
             /**
              * Check if result is Promise-like
+             * @ignore
              */
             if(isPromise(result)){
                 /**
                  * Attach a callback to the result
+                 * @ignore
                  */
                 result.then(processOutput);
             } else {
@@ -187,6 +213,7 @@ class Relay{
         };
         /**
          * Get the required amount of inputs
+         * @ignore
          */
         const inputSize = input.length;
 
@@ -197,11 +224,13 @@ class Relay{
          * Check if the amount of arguments combined with 
          * the amount of received inputs is larger than 
          * the amount of inputs required.
+         * @ignore
          */
         this._received = [...this._received, ...args];
         while(inputSize <= this._received.length){
             /**
              * Get the received inputs
+             * @ignore
              */
             const received = this._received;
             /**
@@ -210,7 +239,8 @@ class Relay{
              * receivedSize exceeds the inputSize.
              * 
              * The remaining inputs will be used for the
-             * next processs.
+             * next processes.
+             * @ignore
              */
             processArgs(received.slice(0, inputSize));
             this._received = received.slice(inputSize);
@@ -219,6 +249,7 @@ class Relay{
 
         /**
          * Return the reference for chaining
+         * @ignore
          */
         return this;
     }

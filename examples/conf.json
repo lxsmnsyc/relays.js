@@ -1,0 +1,11 @@
+{
+    "andGate": {
+        "title": "AND Gate"
+    },
+    "byteMultiplexer": {
+        "title": "Byte Multiplexer"
+    },
+    "sleepyAdder": {
+        "title": "Sleepy Adder"
+    }
+ }
