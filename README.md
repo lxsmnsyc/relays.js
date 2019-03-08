@@ -2,6 +2,9 @@
 
 A library for controlling asynchronous flow of execution
 
+[![NPM](https://nodei.co/npm/relays.js.png)](https://nodei.co/npm/relays.js/)
+
+[![](https://data.jsdelivr.com/v1/package/npm/relays.js/badge)](https://www.jsdelivr.com/package/npm/relays.js)
 
 [![codecov](https://codecov.io/gh/LXSMNSYC/relays.js/branch/master/graph/badge.svg)](https://codecov.io/gh/LXSMNSYC/relays.js)
 [![Build Status](https://travis-ci.org/LXSMNSYC/relays.js.svg?branch=master)](https://travis-ci.org/LXSMNSYC/relays.js)
