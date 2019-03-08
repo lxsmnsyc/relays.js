@@ -15,14 +15,14 @@ const InputB = new Relay(InputProcessor);
  * Create a selector that tells the multiplexer which
  * input shall be selected.
  */
-const Selector = new Relay(x => typeof x === 'string' && x);
+const Selector = new Relay(x => typeof x === 'boolean' && x);
 
 /**
  * create a filter that checks one of the inputs if it is a string,
  * assume that it was received from the Selector, and a number received
  * from the Input. 
  */
-const BasicFilter = (a, b, key) => typeof a === 'string' && typeof b === 'number' && a === key && b;
+const BasicFilter = (a, b, key) => typeof a === 'boolean' && typeof b === 'number' && a === key && b;
 
 /**
  * Create a processor for the multiplexer filter, assume that one of the arguments
@@ -33,8 +33,8 @@ const FilterInputProcessor = (a, b, key) => BasicFilter(a, b, key) || BasicFilte
 /**
  * Create the Filter Relay
  */
-const FilterA = new Relay((a, b) => FilterInputProcessor(a, b, 'A'));
-const FilterB = new Relay((a, b) => FilterInputProcessor(a, b, 'B'));
+const FilterA = new Relay((a, b) => FilterInputProcessor(a, b, true));
+const FilterB = new Relay((a, b) => FilterInputProcessor(a, b, false));
 
 /**
  * Connect inputs to filters
@@ -61,10 +61,10 @@ FilterB.pass(Multiplexer);
 /**
  * Trigger inputs
  */
-Selector.receive('A');
+Selector.receive(true);
 InputA.receive(127);
 InputB.receive(255);
 
-Selector.receive('B');
+Selector.receive(false);
 InputA.receive(127);
 InputB.receive(255);
