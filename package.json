@@ -1,6 +1,6 @@
 {
   "name": "relays.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Asynchronous objects that is a hybrid of observer, emitter and Promise.",
   "main": "index.js",
   "scripts": {
