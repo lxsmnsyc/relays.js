@@ -1,4 +1,4 @@
-![Sleep Adder Diagram](diagram.png)
+![Sleep Adder Diagram](https://raw.githubusercontent.com/LXSMNSYC/relays.js/master/examples/sleepyAdder/diagram.png)
 
 An example implementation of relays.
 

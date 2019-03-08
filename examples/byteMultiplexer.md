@@ -1,4 +1,4 @@
-![Byte Multiplexer Diagram](byteMultiplexer/diagram.png)
+![Byte Multiplexer Diagram](https://raw.githubusercontent.com/LXSMNSYC/relays.js/master/examples/byteMultiplexer/diagram.png)
 
 An example implementation of relays.
 
