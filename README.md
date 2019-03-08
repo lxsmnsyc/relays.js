@@ -3,6 +3,7 @@
 A library for controlling asynchronous flow of execution
 
 [![NPM](https://nodei.co/npm/relays.js.png)](https://nodei.co/npm/relays.js/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FLXSMNSYC%2Frelays.js.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FLXSMNSYC%2Frelays.js?ref=badge_shield)
 
 [![HitCount](http://hits.dwyl.com/LXSMNSYC/relays.js.svg)](http://hits.dwyl.com/LXSMNSYC/relays.js)
 [![](https://data.jsdelivr.com/v1/package/npm/relays.js/badge)](https://www.jsdelivr.com/package/npm/relays.js)
@@ -113,3 +114,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FLXSMNSYC%2Frelays.js.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FLXSMNSYC%2Frelays.js?ref=badge_large)
