@@ -51,6 +51,19 @@ In our example, once both AndGateInputs have received an input, their respective
 
 As a summary, think of Relays as an individual representation of a Promise.all except that it is reusable and can wait for itself to resolve (Relays can connect to itself). For AI enthusiasts, think of Relays like a Perceptron model except that there is no backpropagation and no calibration.
 
+## Usage
+
+NPM
+
+```bash
+npm i relays.js
+```
+
+CDN
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/relays.js/dist/index.min.js"></script>
+```
 ## Examples
 
 * [AND Gate](https://github.com/LXSMNSYC/relays.js/tree/master/examples/andGate)
