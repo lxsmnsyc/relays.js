@@ -28,7 +28,7 @@
 /**
  * @ignore
  */
-const isPromise = obj =>!!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
+const isPromise = (obj =>!!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function') || result instanceof Promise;
 /**
  * @ignore
  */
@@ -172,7 +172,7 @@ export default class Relay{
                 this._output = output.filter(x => x !== outputRelay);
             }
 
-            if(!input.includes(this)){
+            if(input.includes(this)){
                 outputRelay._input = input.filter(x => x !== this);
             }
         }
@@ -192,9 +192,57 @@ export default class Relay{
         return this;
     }
     /**
+     * Checks if the given relay is connected to an output relay
+     * @param {Relay} outputRelay 
+     * @returns {boolean}
+     */
+    isConnectedTo(outputRelay){
+        /**
+         * Relay check
+         * @ignore
+         */
+        if(outputRelay instanceof Relay){
+            return this._output.includes(outputRelay);
+        }
+        return false;
+    }
+    /**
+     * Checks if the given relay is connected to an input relay
+     * @param {Relay} inputRelay 
+     * @returns {boolean}
+     */
+    isConnectedFrom(inputRelay){
+        /**
+         * Relay check
+         * @ignore
+         */
+        if(inputRelay instanceof Relay){
+            return this._input.includes(inputRelay);
+        }
+        return false;
+    }
+    /**
+     * Checks if the given relay is connected to another relay
+     * in any way.
+     * @param {Relay} relay
+     * @returns {boolean} 
+     */
+    isConnected(relay){
+        return this.isConnectedTo(relay) || this.isConnectedFrom(relay);
+    }
+    /**
+     * Checks if the given relay and the othe relay are connected
+     * to each other
+     * @param {Relay} relay
+     * @returns {boolean} 
+     */
+    isConnectedBothways(relay){
+        return this.isConnected(relay) && relay.isConnected(this);
+    }
+    /**
      * Receive inputs and process them if the required amount of inputs are
      * met or save the inputs as a pending input
-     * @param {...*} args 
+     * @param {...any} args 
      * @return {Relay} for chaining purposes, the given relay is returned. 
      */
     receive(...args){
@@ -286,9 +334,7 @@ export default class Relay{
              */
             processArgs(received.slice(0, inputSize));
             this._received = received.slice(inputSize);
-            
         }
-
         /**
          * Return the reference for chaining
          * @ignore
