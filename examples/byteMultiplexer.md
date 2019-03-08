@@ -74,3 +74,11 @@ Selector.receive(false);
 InputA.receive(127);
 InputB.receive(255);
 ```
+
+example output:
+
+```bash
+$ node examples/byteMultiplexer
+Input selected: 127
+Input selected: 255
+```

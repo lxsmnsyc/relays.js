@@ -26,3 +26,13 @@ AndGateInputB.receive(true);
 AndGateInputA.receive(false);
 AndGateInputB.receive(false);
 ```
+
+example output:
+
+```bash
+$ node examples/andGate
+The result is true
+The result is false
+The result is false
+The result is false
+```

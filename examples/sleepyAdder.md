@@ -50,3 +50,10 @@ Adder.pass(x => console.log("The sum is ", x));
 InputA.receive(127);
 InputB.receive(128);
 ```
+
+example output:
+
+```bash
+$ node examples/sleepyAdder
+The sum is  255
+```

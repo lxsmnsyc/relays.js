@@ -1,11 +1,16 @@
 {
-    "andGate": {
-        "title": "AND Gate"
-    },
-    "byteMultiplexer": {
-        "title": "Byte Multiplexer"
-    },
-    "sleepyAdder": {
-        "title": "Sleepy Adder"
+    "examples":{
+        "title": "Examples",
+        "children": {
+            "andGate": {
+                "title": "AND Gate"
+            },
+            "byteMultiplexer": {
+                "title": "Byte Multiplexer"
+            },
+            "sleepyAdder": {
+                "title": "Sleepy Adder"
+            }
+        }
     }
  }
