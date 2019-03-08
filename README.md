@@ -2,6 +2,15 @@
 
 A library for controlling asynchronous flow of execution
 
+
+[![codecov](https://codecov.io/gh/LXSMNSYC/relays.js/branch/master/graph/badge.svg)](https://codecov.io/gh/LXSMNSYC/relays.js)
+[![Build Status](https://travis-ci.org/LXSMNSYC/relays.js.svg?branch=master)](https://travis-ci.org/LXSMNSYC/relays.js)
+[![Inline docs](http://inch-ci.org/github/LXSMNSYC/relays.js.svg?branch=master)](http://inch-ci.org/github/LXSMNSYC/relays.js)
+
+[![Known Vulnerabilities](https://snyk.io/test/github/LXSMNSYC/relays.js/badge.svg?targetFile=package.json)](https://snyk.io/test/github/LXSMNSYC/relays.js?targetFile=package.json)
+[![devDependencies Status](https://david-dm.org/LXSMNSYC/relays.js/dev-status.svg)](https://david-dm.org/LXSMNSYC/relays.js?type=dev)
+
+
 ## What are Relays
 
 Relays are a representation of an asynchronous callback which can receive inputs when a relay accepts inputs, process those inputs and return an output. You can imagine it as a hybrid of an observer and an observable, except that Relays won't start executing the callback if the inputs received does not match the required number of connected inputs.
@@ -47,6 +56,22 @@ As a summary, think of Relays as an individual representation of a Promise.all e
 * [AND Gate](https://github.com/LXSMNSYC/relays.js/tree/master/examples/andGate)
 * [Byte Multiplexer](https://github.com/LXSMNSYC/relays.js/tree/master/examples/byteMultiplexer)
 * [Sleepy Adder](https://github.com/LXSMNSYC/relays.js/tree/master/examples/sleepyAdder)
+
+## Build
+
+Clone the repo then run:
+
+```bash
+npm install
+```
+
+which will install dependencies. You can then run:
+
+```bash
+npm run build
+```
+
+which build the NodeJS module, the browser-version (with minified) of the source, the docs, the test and coverages.
 
 ## License
 
