@@ -149,6 +149,49 @@ export default class Relay{
         return this;
     }
     /**
+     * Disconnects the given relay from an output relay
+     * @param {Relay} outputRelay 
+     * @returns {Relay} for chaining purposes, the given relay is returned. 
+     */
+    disconnectTo(outputRelay){
+        /**
+         * Relay check
+         * @ignore
+         */
+        if(outputRelay instanceof Relay){
+            /**
+             * Check if outputRelay is in output array
+             * or check if the given relay is an input relay
+             * for outputRelay.
+             * @ignore
+             */
+            const input = outputRelay._input;
+            const output = this._output;
+
+            if(output.includes(outputRelay)){
+                this._output = output.filter(x => x !== outputRelay);
+            }
+
+            if(!input.includes(this)){
+                outputRelay._input = input.filter(x => x !== this);
+            }
+        }
+        /**
+         * Return the reference for chaining
+         * @ignore
+         */
+        return this;
+    }
+    /**
+     * Disconnects the given relay from an output relay
+     * @param {Relay} outputRelay 
+     * @returns {Relay} for chaining purposes, the given relay is returned. 
+     */
+    disconnectFrom(inputRelay){
+        inputRelay.disconnectTo(this);
+        return this;
+    }
+    /**
      * Receive inputs and process them if the required amount of inputs are
      * met or save the inputs as a pending input
      * @param {...*} args 
