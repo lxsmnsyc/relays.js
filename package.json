@@ -1,0 +1,33 @@
+{
+  "name": "relays.js",
+  "version": "0.1.0",
+  "description": "Asynchronous objects that is a hybrid of observer, emitter and Promise.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LXSMNSYC/relays.js.git"
+  },
+  "keywords": [
+    "async",
+    "asynchronous",
+    "callback",
+    "observer",
+    "emitter",
+    "reactive",
+    "observable"
+  ],
+  "author": "LXSMNSYC (alexis.munsayac@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LXSMNSYC/relays.js/issues"
+  },
+  "homepage": "https://github.com/LXSMNSYC/relays.js#readme",
+  "devDependencies": {
+    "docdash": "^1.0.3",
+    "jsdoc": "^3.5.5",
+    "mocha": "^6.0.2"
+  }
+}
