@@ -285,7 +285,7 @@ class Relay{
             let result;
             try{
                 result = processor.apply(null, preparedArgs);
-            } catch {
+            } catch(e) {
                 return this;
             }
             /**
