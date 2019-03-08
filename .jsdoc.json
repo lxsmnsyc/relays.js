@@ -21,16 +21,16 @@
 
     "docdash": {
         "meta": {                       
-            "title": "Px - Promise Extensions for JS",                
-            "description": "Px is a library for extending Promises.",         
-            "keyword": "javascript, js, promise, defer, aplus, promises"               
+            "title": "relays.js",                
+            "description": "relays.js",         
+            "keyword": "javascript, js, observer, pub-sub, observable, emitter, event"               
         },
         "openGraph": {                  
-            "title": "Px - Promise Extensions for JS",                
+            "title": "relays.js",                
             "type": "website",         
             "image": "https://avatars3.githubusercontent.com/u/2680116?s=280&v=4",                
-            "site_name": "Px - Promise Extensions for JS",  
-            "url": "https://lxsmnsyc.github.io/px/"                   
+            "site_name": "relays.js",  
+            "url": "https://lxsmnsyc.github.io/relays.js/"                   
         },
         "sectionOrder": [
             "Tutorials",    

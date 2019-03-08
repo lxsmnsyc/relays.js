@@ -147,7 +147,8 @@ class Relay{
      * @returns {Relay} for chaining purposes, the given relay is returned. 
      */
     connectFrom(inputRelay){
-        return inputRelay.connectTo(this);
+        inputRelay.connectTo(this);
+        return this;
     }
     /**
      * Receive inputs and process them if the required amount of inputs are

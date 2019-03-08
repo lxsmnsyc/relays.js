@@ -44,9 +44,9 @@ As a summary, think of Relays as an individual representation of a Promise.all e
 
 ## Examples
 
-* [AND Gate](examples/andGate)
-* [Byte Multiplexer](examples/byteMultiplexer)
-* [Sleepy Adder](examples/sleepyAdder)
+* [AND Gate](https://github.com/LXSMNSYC/relays.js/tree/master/examples/andGate)
+* [Byte Multiplexer](https://github.com/LXSMNSYC/relays.js/tree/master/examples/byteMultiplexer)
+* [Sleepy Adder](https://github.com/LXSMNSYC/relays.js/tree/master/examples/sleepyAdder)
 
 ## License
 
