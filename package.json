@@ -4,11 +4,27 @@
   "description": "Asynchronous objects that is a hybrid of observer, emitter and Promise.",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=html mocha -R spec",
-    "build-cjs": "./node_modules/.bin/rollup src/index.js --format cjs --name \"Relay\" --file index.js",
-    "build-browser": "./node_modules/.bin/rollup src/index.js --format iife --name \"Relay\" --file dist/index.js",
-    "build-minify": "npm run build-browser && ./node_modules/.bin/terser dist/index.js --compress --mangle --output dist/index.min.js",
-    "build-docs": "jsdoc -c .jsdoc.json index.js --readme README.md --tutorials ./examples/",
+    "linux-mocha": "./node_modules/.bin/mocha -R spec",
+    "linux-test": "./node_modules/.bin/nyc --reporter=html npm run linux-mocha",
+    "linux-build-cjs": "./node_modules/.bin/rollup src/index.js --format cjs --name \"Relay\" --file index.js",
+    "linux-build-browser": "./node_modules/.bin/rollup src/index.js --format iife --name \"Relay\" --file dist/index.js",
+    "linux-build-minify": "npm run linux-build-browser && ./node_modules/.bin/terser dist/index.js --compress --mangle --output dist/index.min.js",
+    "linux-build-docs": "./node_modules/.bin/jsdoc -c .jsdoc.json index.js --readme README.md --tutorials ./examples/",
+    "linux-build": "npm run linux-build-cjs && npm run linux-build-minify && npm run linux-build-docs && npm run linux-test",
+    
+    "win-mocha": "node node_modules/mocha/bin/mocha -R spec",
+    "win-test": "node node_modules/nyc/bin/nyc.js --reporter=html npm run win-mocha",
+    "win-build-cjs": "node node_modules/rollup/bin/rollup src/index.js --format cjs --name \"Relay\" --file index.js",
+    "win-build-browser": "node node_modules/rollup/bin/rollup src/index.js --format iife --name \"Relay\" --file dist/index.js",
+    "win-build-minify": "npm run win-build-browser && node node_modules/terser/bin/uglifyjs dist/index.js --compress --mangle --output dist/index.min.js",
+    "win-build-docs": "node node_modules/jsdoc/jsdoc.js -c .jsdoc.json index.js --readme README.md --tutorials ./examples/",
+    "win-build": "npm run win-build-cjs && npm run win-build-minify && npm run win-build-docs && npm run win-test",
+    
+    "test": "npm run linux-test || npm run win-test",
+    "build-cjs": "npm run linux-build-cjs || npm run win-build-cjs",
+    "build-browser": "npm run linux-build-browser || npm run win-build-browser",
+    "build-minify": "npm run linux-build-minify || npm run win-build-minify",
+    "build-docs": "npm run linux-build-docs || npm run win-build-docs",
     "build": "npm run build-cjs && npm run build-minify && npm run build-docs && npm test"
   },
   "repository": {
