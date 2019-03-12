@@ -7,8 +7,12 @@ A library for controlling asynchronous flow of execution
 [![HitCount](http://hits.dwyl.com/LXSMNSYC/relays.js.svg)](http://hits.dwyl.com/LXSMNSYC/relays.js)
 [![](https://data.jsdelivr.com/v1/package/npm/relays.js/badge)](https://www.jsdelivr.com/package/npm/relays.js)
 
+| Platform | Build Status |
+| --- | --- |
+| Linux | [![Build Status](https://travis-ci.org/LXSMNSYC/relays.js.svg?branch=master)](https://travis-ci.org/LXSMNSYC/relays.js) |
+| Windows | [![Build status](https://ci.appveyor.com/api/projects/status/ja7dsy46dje9mk6o?svg=true)](https://ci.appveyor.com/project/LXSMNSYC/relays-js) |
+
 [![codecov](https://codecov.io/gh/LXSMNSYC/relays.js/branch/master/graph/badge.svg)](https://codecov.io/gh/LXSMNSYC/relays.js)
-[![Build Status](https://travis-ci.org/LXSMNSYC/relays.js.svg?branch=master)](https://travis-ci.org/LXSMNSYC/relays.js)
 [![Inline docs](http://inch-ci.org/github/LXSMNSYC/relays.js.svg?branch=master)](http://inch-ci.org/github/LXSMNSYC/relays.js)
 
 [![Known Vulnerabilities](https://snyk.io/test/github/LXSMNSYC/relays.js/badge.svg?targetFile=package.json)](https://snyk.io/test/github/LXSMNSYC/relays.js?targetFile=package.json)
